@@ -1,80 +1,125 @@
+# Financial Distress ML Pipeline
 
-Updated on 2024-06-08T10:36:34+06:55
-Updated on 2024-06-12T13:24:30+06:55
-Updated on 2024-06-16T01:16:04+06:55
-Updated on 2024-06-20T08:27:00+06:55
-Updated on 2024-05-25T10:08:58+06:55
-Updated on 2024-05-30T10:04:28+06:55
-Updated on 2024-06-21T01:14:03+06:55
-Updated on 2024-06-11T20:09:17+06:55
-Updated on 2024-06-24T22:51:50+06:55
-Updated on 2024-05-14T23:39:12+06:55
-Updated on 2024-05-15T11:01:52+06:55
-Updated on 2024-06-06T09:37:03+06:55
-Updated on 2024-05-16T20:27:01+06:55
-Updated on 2024-05-28T09:33:34+06:55
-Updated on 2024-05-21T01:03:17+06:55
-Updated on 2024-06-03T21:34:53+06:55
-Updated on 2024-06-27T02:24:22+06:55
-Updated on 2024-05-20T18:51:15+06:55
-Updated on 2024-06-24T19:26:58+06:55
-Updated on 2024-05-27T13:31:32+06:55
-Updated on 2024-05-15T02:17:15+06:55
-Updated on 2024-05-28T23:57:00+06:55
-Updated on 2024-06-10T22:05:39+06:55
-Updated on 2024-06-19T16:23:23+06:55
-Updated on 2024-06-04T20:00:30+06:55
-Updated on 2024-06-28T20:43:57+06:55
-Updated on 2024-06-23T03:08:25+06:55
-Updated on 2024-05-06T01:16:28+06:55
-Updated on 2024-06-22T22:17:49+06:55
-Updated on 2024-05-23T07:39:56+06:55
-Updated on 2024-06-04T14:49:43+06:55
-Updated on 2024-05-24T18:08:30+06:55
-Updated on 2024-06-19T17:01:17+06:55
-Updated on 2024-05-18T05:57:16+06:55
-Updated on 2024-05-07T20:16:00+06:55
-Updated on 2024-06-09T23:20:26+06:55
-Updated on 2024-06-06T16:01:15+06:55
-Updated on 2024-05-18T08:28:25+06:55
-Updated on 2024-05-25T23:07:21+06:55
-Updated on 2024-06-21T02:19:11+06:55
-Updated on 2024-06-07T02:14:26+06:55
-Updated on 2024-06-01T12:57:16+06:55
-Updated on 2024-05-27T14:24:10+06:55
-Updated on 2024-05-31T15:06:45+06:55
-Updated on 2024-06-21T23:34:55+06:55
-Updated on 2024-06-06T23:39:56+06:55
-Updated on 2024-06-02T09:02:01+06:55
-Updated on 2024-06-20T03:49:06+06:55
-Updated on 2024-06-12T05:23:32+06:55
-Updated on 2024-06-28T00:33:49+06:55
-Updated on 2024-05-25T12:33:33+06:55
-Updated on 2024-06-18T05:09:22+06:55
-Updated on 2024-06-01T07:43:23+06:55
-Updated on 2024-05-20T06:54:02+06:55
-Updated on 2024-06-23T06:40:20+06:55
-Updated on 2024-06-12T12:12:53+06:55
-Updated on 2024-06-16T01:51:35+06:55
-Updated on 2024-06-21T09:38:45+06:55
-Updated on 2024-06-05T02:15:06+06:55
-Updated on 2024-05-10T22:19:13+06:55
-Updated on 2024-05-18T00:01:25+06:55
-Updated on 2024-05-16T10:52:55+06:55
-Updated on 2024-06-28T12:33:51+06:55
-Updated on 2024-05-11T11:32:05+06:55
-Updated on 2024-05-14T19:16:08+06:55
-Updated on 2024-05-26T12:27:49+06:55
-Updated on 2024-06-02T05:43:51+06:55
-Updated on 2024-05-24T12:17:52+06:55
-Updated on 2024-06-27T08:31:42+06:55
-Updated on 2024-05-10T04:44:27+06:55
-Updated on 2024-05-22T03:32:43+06:55
-Updated on 2024-06-20T04:32:53+06:55
-Updated on 2024-05-08T06:07:56+06:55
-Updated on 2024-06-19T19:21:00+06:55
-Updated on 2024-06-10T05:56:18+06:55
-Updated on 2024-05-08T04:14:22+06:55
-Updated on 2024-06-01T01:30:24+06:55
-Updated on 2024-05-08T21:38:38+06:55
-Updated on 2024-05-24T21:54:54+06:55
+## Overview
+This project is a machine learning pipeline designed to analyze financial distress data. It includes scripts for ETL (Extract, Transform, Load), feature engineering, model training, and visualization.
+
+## Project Structure
+```
+financial-distress-ml-pipeline/
+├── codes/
+│   ├── etl.py
+│   ├── featureEngineering.py
+│   ├── train.py
+│   └── viz.py
+├── data/
+│   ├── credit-data.csv
+│   ├── Data Dictionary.xls
+│   └── data_types.json
+├── processed_data/
+│   ├── col_names.pickle
+│   ├── X.npz
+│   └── y.npz
+├── requirements.txt
+└── test_etl.py
+    ├── test_featureEngineering.py
+    └── test_viz.py
+```
+
+## Setup
+1. **Install Dependencies**: Ensure you have Python installed, then run:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run ETL Script**: This script processes the raw data and saves it to `processed_data/`.
+   ```bash
+   python codes/etl.py
+   ```
+
+3. **Run Feature Engineering Script**: This script transforms the processed data.
+   ```bash
+   python codes/featureEngineering.py
+   ```
+
+4. **Train Models**: This script trains various machine learning models and evaluates their performance.
+   ```bash
+   python codes/train.py
+   ```
+
+5. **Visualize Results**: This script generates visualizations of the data and model results.
+   ```bash
+   python codes/viz.py
+   ```
+
+## Scripts Documentation
+
+### etl.py
+- **Purpose**: Processes raw credit data.
+- **Functions**:
+  - `translate_data_type(data_type)`: Translates data types from the dictionary to pandas DataFrame types.
+  - `save_data_types(data_dictonary, header_row)`: Saves translated data types to a JSON file.
+  - `perform_etl()`: Orchestrates the ETL process.
+
+### featureEngineering.py
+- **Purpose**: Engineers features for machine learning models.
+- **Functions**:
+  - `drop_max_outliers(data, drop_vars)`: Drops rows with large outliers.
+  - `convert_to_binary(data, to_bin_vars)`: Converts specified columns to binary variables.
+  - `combine_binary_variables(data, combine_vars, ordered)`: Combines binary variables into a single categorical or ordinal variable.
+  - `apply_one_hot_encoding(data, cat_vars)`: Applies one-hot encoding to categorical variables.
+  - `split_data(data, test=True, split_params=SPLIT_PARAMS)`: Splits data into training and testing sets.
+  - `impute_missing_values(X_train, X_test, data_types, ask=True)`: Imputes missing values in the training and testing sets.
+  - `discretize_continuous_variables(X_train, X_test, cont_vars, right_inclusive)`: Discretizes continuous variables into bins.
+  - `scale_features(X_train, X_test, ask=True, scale_test=False)`: Scales features using a specified scaler.
+  - `save_processed_data(X_train, X_test, y_train, y_test, col_names)`: Saves processed data to NumPy arrays and a pickle file.
+  - `process_data()`: Orchestrates the entire feature engineering process.
+
+### train.py
+- **Purpose**: Trains machine learning models and evaluates their performance.
+- **Functions**:
+  - `ask_user()`: Prompts the user for a classifier and metric index.
+  - `load_preprocessed_features(dir_path=INPUT_DIR, test=True)`: Loads pre-processed feature matrices.
+  - `build_default_benchmark(data, metric_index)`: Builds and evaluates the default decision tree benchmark model.
+  - `predict_probabilities(clf, X_test)`: Predicts probabilities for the test set.
+  - `perform_cross_validation(clf, skf, data, metric_index, threshold)`: Performs cross-validation and evaluates the model.
+  - `find_best_threshold(model_index, metric_index, train_data, verbose=True, plot=True)`: Finds the best threshold for the model.
+  - `tune_hyperparameters(model_index, metric_index, train_data, best_threshold, n_folds=10, verbose=True)`: Tunes hyperparameters using grid search and cross-validation.
+  - `calculate_precision_at_k(y_true, y_scores, k)`: Calculates precision at a given threshold.
+  - `evaluate_tuned_model(model_index, metric_index, best_threshold, best_grid, data, plot=True, verbose=True, write=False, output=None)`: Evaluates the tuned model on the test set.
+  - `train_and_evaluate_model(model_index, metric_index, data, train_data, write=False, output=None)`: Trains and evaluates a specific model.
+
+### viz.py
+- **Purpose**: Generates visualizations of the data and model results.
+- **Functions**:
+  - `read_clean_data(data_types_json, data_file, dir_path=INPUT_DIR)`: Reads clean data from CSV files.
+  - `bar_plot(ax, data, column, sub=True, labels=["", "", ""], x_tick=[None, None])`: Generates a bar plot for a given column.
+  - `hist_plot(ax, ds, col, cut=False)`: Generates a histogram plot for a given column.
+  - `hist_panel(data, panel_title="", cut=False)`: Generates a panel of histograms for multiple columns.
+  - `corr_triangle(ax, data, sub=False, plot_title="")`: Generates a correlation triangle plot.
+  - `box_plot(data)`: Generates a box plot for the data.
+  - `plot_predicted_scores(cv_scores, title="")`: Plots predicted scores against actual values.
+  - `plot_precision_recall(y_true, y_score, baseline, title="")`: Plots precision-recall curve.
+  - `plot_auc_roc(clf, data, title="")`: Plots ROC curve and AUC score.
+  - `plot_feature_importances(importances, col_names, n=5, title="")`: Plots feature importances.
+
+## Testing
+- **Test ETL**: Ensures the ETL process runs successfully.
+  ```bash
+  pytest test_etl.py
+  ```
+
+- **Test Feature Engineering**: Ensures feature engineering scripts run successfully.
+  ```bash
+  pytest test_featureEngineering.py
+  ```
+
+- **Test Visualization**: Ensures visualization scripts run successfully.
+  ```bash
+  pytest test_viz.py
+  ```
+
+## Contributing
+Contributions are welcome! Please follow the guidelines in `CONTRIBUTING.md`.
+
+## License
+This project is licensed under the MIT License. See `LICENSE` for details.
